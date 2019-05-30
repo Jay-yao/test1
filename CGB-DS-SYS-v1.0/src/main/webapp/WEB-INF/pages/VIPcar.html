@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+<title></title>
+<!--引入公共样式-->
+<link rel="stylesheet" type="text/css" href="css/public.css" />
+<!--引入重置样式-->
+<link rel="stylesheet" type="text/css" href="css/reset.css" />
+<!--引入主页内容样式-->
+<link rel="stylesheet" type="text/css" href="css/VIPcar.css" />
+<!--jquery引入-->
+<script src="js/jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
+<!--主页js   index引入-->
+<script src="js/VIPcar.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/tyslide.js" type="text/javascript" charset="utf-8"></script>
+<style type="text/css">
+	
+	/*设置 span 标签的css样式*/
+	#abc{
+	    border: 0px;
+		padding: 5px 7px;
+		color: pink;
+		margin-left: 20px;
+		text-decoration: none;
+		}
+	.page-normal a{
+		border: 1px solid #ff6500;
+		padding: 5px 7px;
+		color: #ff6500;
+		margin-left: 10px;/*设置标签 a 之间的间隔*/
+		text-decoration: none;/*去除页码数字下面的下划线*/
+	}
+	/*设置鼠标经过时 span 标签的css样式*/
+	.page-normal a:hover{
+		background-color: #ffbe94;
+	}
+	
+	/*设置整个div的css样式,该样式主要用于设置网页内的省略号 …… 的样式，并且同时设置内容居中显示*/
+	.page-normal{
+		color: #ff6500;
+		text-align: center;
+	}
+	
+	/*设置当前页面的css样式*/
+	.page-normal .page-current{
+		color: #ffffff;
+		background-color: #ff6500;
+	}
+	
+	/*设置左单括号 < 的css样式*/
+	.page-normal .page-prev{
+		color: #ffe3c6;
+	}
+	
+	/*进行代码优化，将不同css样式中共有的属性放在一起，有助于提高运行效率*/
+	.page-normal a, .page-normal a:hover, .page-normal .page-prev, .page-normal .page-current{
+		border: 1px solid #ff6500;
+		padding: 2px 5px;
+	}
+	
+</style>
+</head>
+<body>
+	<div id="top" class="box">
+		<div class="box1200 clear">
+			<p id="topleft" class="left">legochina.cn</p>
+			<p id="topright" class="right">
+				<span class="topspan">欢迎光临乐购，请</span> <a class="graya"
+					href="enter.html">登录</a> <span class="topspan">\</span> <a
+					class="reda" href="login.html">注册</a>
+			</p>
+		</div>
+
+	</div>
+	<!--导航栏-->
+	<div id="navmax" class="box1200 clear">
+		<div id="logo">
+			<img src="img/vip_center.png" />
+		</div>
+		<div id="navmaxD" class="clear">
+			<p>乐我所乐，我的VIP！</p>
+			<ul class=" clear">
+				<li><a class="limouseover" href="index.html">我的订单</a></li>
+				<li>会员特权</li>
+			</ul>
+		</div>
+
+	</div>
+
+
+	<!--主内容区-->
+
+
+	<div class="clear box1200">
+		<div class="content_left left">
+			<div id="bannerR">
+				<div id="bannerRTop">
+					<p id="leftTop">
+						<span>欢乐购</span><br /> <span>查看你的特权</span>
+					</p>
+					<p class="ledou ledou3">我的乐豆: --</p>
+					<p class="ledou ledou2">我的优惠券: --</p>
+					<div class="denglu">
+						<div>
+							<img src="img/libao.png" />
+						</div>
+						<p>10个礼包（未领取）</p>
+					</div>
+					<div class="denglu">
+						<div>
+							<img src="img/tequan.png" />
+						</div>
+						<p>
+							<img src="img/tequan1.png" />
+						</p>
+					</div>
+				</div>
+			</div>
+			<div id="activity" class="box">
+				<div>
+					<div class="activity_min activity_one ">
+						<p class="activity_min_font22">PLUS专享</p>
+						<p class="activity_min_font14">20元现金卡</p>
+					</div>
+					<div class="activity_min activity_two ">
+						<p class="activity_min_font22">PLUS专享</p>
+						<p class="activity_min_font14">20元现金卡</p>
+					</div>
+					<div class="activity_min activity_three ">
+						<p class="activity_min_font22">PLUS专享</p>
+						<p class="activity_min_font14">20元现金卡</p>
+					</div>
+					<div class="activity_min activity_four ">
+						<p class="activity_min_font22">PLUS专享</p>
+						<p class="activity_min_font14">20元现金卡</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="content_right right">
+			<!--主内容区-->
+			<div id="shpocar">
+				<p class="misg">
+					最近订单
+				</p>
+
+				<div id="shoptitle" class="clear">
+					<p>商品编号</p>
+					<p>商品</p>
+					<p>单价</p>
+					<p>状态</p>
+				</div>
+			</div>
+
+			<input type="text" id="aa" placeholder="测试删除按钮"><input
+				type="button" value="走起" id="del">
+
+			<div id="shopbody"></div>
+			<!-- <div id="pagingPage"></div> -->
+			<div class="page"></div>
+		</div>
+	</div>
+
+	<!--页脚-->
+	<div class="box" id="footer">
+		<p class="box recommendTitle"></p>
+		<div class="box" id="footermax">
+			<div id="footertop">
+				<div class="footertop"></div>
+				<div id="footertop2" class="footertop"></div>
+				<div id="footertop3" class="footertop"></div>
+				<div id="footertop4" class="footertop"></div>
+			</div>
+		</div>
+		<div id="footerCenter" class=" clear">
+			<ul class="footermin">
+				<li class="footerminbox">购物指南</li>
+				<li>购物流程</li>
+				<li>发票制度</li>
+				<li>账户管理</li>
+				<li>会员优惠</li>
+			</ul>
+			<ul class="footermin">
+				<li class="footerminbox">购物指南</li>
+				<li>购物流程</li>
+				<li>发票制度</li>
+				<li>账户管理</li>
+				<li>会员优惠</li>
+			</ul>
+			<ul class="footermin">
+				<li class="footerminbox">购物指南</li>
+				<li>购物流程</li>
+				<li>发票制度</li>
+				<li>账户管理</li>
+				<li>会员优惠</li>
+			</ul>
+			<ul class="footermin">
+				<li class="footerminbox">购物指南</li>
+				<li>购物流程</li>
+				<li>发票制度</li>
+				<li>账户管理</li>
+				<li>会员优惠</li>
+			</ul>
+			<ul class="footermin">
+				<li class="footerminbox">购物指南</li>
+				<li>购物流程</li>
+				<li>发票制度</li>
+				<li>账户管理</li>
+				<li>会员优惠</li>
+			</ul>
+		</div>
+		<div id="footerbut">
+			<a href="#">公司简介</a>|<a href="#">Investor&nbsp;Relations</a>|<a
+				href="#">网站联盟</a>|<a href="#">乐购招商</a>|<a href="#">机构销售</a>|<a
+				href="#">手机乐购</a>|<a href="#">官方Blog</a>|<a href="#">热词搜索</a>
+			<p>
+				<span>Copyrigth</span> <span>(C)</span> <span>乐购网</span> <span>2004-2016</span>
+				<span>All</span> <span>Rights</span> <span>Reserved</span>
+			</p>
+		</div>
+	</div>
+</body>
+</html>
